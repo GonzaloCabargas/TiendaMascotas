@@ -1,0 +1,61 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block contenido %}
+<!-- encabezado main page -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3> <span>Bienvenid@</span> a nuestra tienda </h3>
+        <a href="{% url 'tienda' %}" class="btn">ver tienda</a>
+    </div>
+
+    <img src="{% static 'image/bottom_wave.png' %}" class="wave" alt="">
+
+</section>
+
+<!--------------------------------------------------------------------->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <div class="image">
+        <img src="{% static 'image/about.png' %}" alt="">
+    </div>
+
+    <div class="content">
+        <h3>¿Quienes <span>somos?</span> </h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum sint, dolore perspiciatis iure consequuntur eligendi quaerat vitae shaikh anas Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi laboriosam eos veritatis saepe, odio sed.</p>
+        <a href="https://www.instagram.com/losthompsonscl/channel/" target="_blank" class="btn">nuestro instagram</a>
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- Donacion -->
+
+<div class="dog-food">
+
+    <div class="image">
+        <img src="{% static 'image/dog_food_1.png' %}" alt="">
+    </div>
+
+    <div class="content">
+        <h3> <span>Sin fines</span> de lucro </h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat iure illo, repudiandae rem porro sunt Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit aspernatur minus saepe quo corporis vitae, ex tempora sapiente omnis obcaecati modi .</p>
+        <div class="amount">haz tu donacion aqui</div>
+        <a href="{% url 'donacion' %}"> <img src="{% static 'image/shop_now_dog_1.png' %}" alt=""> </a>
+    </div>
+    
+    <div class="content">
+        <h1>UBICATEX</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13293.867220165144!2d-70.5621901!3d-33.593190650000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scl!4v1656715169270!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+
+
+</div>
+{% endblock %}

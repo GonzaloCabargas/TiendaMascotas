@@ -1,0 +1,43 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block contenido %}
+<!-- catalogo -->
+<link rel="stylesheet" href="{% static 'css/tienda.css' %}">
+<section class="catalogo" id="catalogo">
+    <h1 class="heading"> nuestros <span> productos </span> </h1>
+
+    <div id="cont_padre" class="cont_padre opacity0">
+        <aside>
+            <H1>TIENDA DE MASCOTAS</H1>
+            {% if request.session.carrito.items %}
+            {% for key, value in request.session.carrito.items %}
+            <div class="cont_carrito">
+                <p>{{value.nombre}}</p>
+                <p>${{value.acumulado}}</p>
+                <p>{{value.cantidad}}</p>
+                <a class="btn_add" href="{%url 'Add' value.producto_id%}" >+</a>
+                <a class="btn_res" href="{%url 'Sub' value.producto_id%}" >-</a>
+            </div>
+            {% endfor %}
+            {% endif %}
+    
+            <a class="btn_aside" href="{%url 'CLS' %}" >Limpiar</a>
+            <a class="btn_aside" href="#" >Pagar</a>
+        </aside>
+        <div id="bodyDisplay" class="display">
+            {% for aux in productos %}
+            <div id="contenedor" class="contenedor">
+                <h1 class="nomProducto">{{aux.nombre}}</h1>
+                <p class="descProducto" style="display:none;">{{aux.descripcion}}</p>
+                <img class="imgProducto" src="{{aux.imagen.url}}">
+                <p class="valor">{{aux.valor}}</p>
+                <a href="{%url 'Add' aux.id%}">Agregar</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</section>
+<script type="text/javascript" src="{% static 'js/tienda.js' %}"></script>
+{% endblock %}

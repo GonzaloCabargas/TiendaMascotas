@@ -1,0 +1,26 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+{% block css %}
+<script src="https://www.paypal.com/sdk/js?client-id=AYGqb2K8RyNldLAwD2NMCmnJMc9bQHaNgyDuQ_yoEjy8ek6wrkmnAOEwzv6_E9YveUNGxRoTwNN9SJze&currency=USD"></script>
+{% endblock %}
+
+{% block contenido %}
+<h1 class="heading"><span>GRACIAS</span> POR SU DONACION!</h1>
+<div id="paypal-button-container">
+    <!---SE OCUPA LA API DE PAYPAL-->
+    <script>
+        paypal.Buttons({
+            style:{
+                shape: 'pill',
+            }
+        }).render('#paypal-button-container');
+    </script>
+</div>
+<div class="btn btn-secondary">
+    <a href="{% url 'home' %}"><button>VOLVER</button></a>
+</div> 
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

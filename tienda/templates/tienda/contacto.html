@@ -1,0 +1,30 @@
+{% extends 'tienda/base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+    <!-- contacto -->
+
+<section class="contact" id="contact">
+    
+
+    <div class="image">
+        <img src="{% static 'image/contact_img.png' %}" alt="">
+    </div>
+
+    <form action="mailto:go.cabargas@duocuc.cl" class="formulario_contacto" method="post">
+        <h3>contactanos</h3>
+       
+        <input type="text" placeholder="ingrese su nombre" class="box">
+        <input type="email" placeholder="correo electronico" class="box">
+        <input type="tumber" placeholder="tipo consulta" class="box">
+        
+        <textarea name="" placeholder="escribe tu consulta" id="" cols="30" rows="10"></textarea>
+        
+        <input type="submit" value="enviar" class="btn">
+        <a href="{% url 'home' %}" class="btn btn-secondary">ir al home</a> | 
+    </form>
+
+</section>
+
+{% endblock %}
